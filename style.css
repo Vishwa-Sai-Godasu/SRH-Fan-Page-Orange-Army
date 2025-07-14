@@ -1,0 +1,282 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fffaf5;
+  color: #333;
+}
+
+header {
+  position: relative;
+  background: linear-gradient(45deg, #f05a28, #fb8c00);
+  color: #000;
+  text-align: center;
+  padding: 2rem 1rem;
+  overflow: hidden;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* 🔥 Fire animation behind title */
+.fire {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  margin-left: -60px;
+  background: radial-gradient(circle, rgba(255, 140, 0, 0.8) 0%, rgba(255,69,0,0) 70%);
+  animation: flicker 1s infinite alternate;
+  opacity: 0.6;
+}
+
+.fire::before, .fire::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(255, 69, 0, 0.6) 0%, rgba(255,69,0,0) 70%);
+  animation: flicker 1.5s infinite alternate;
+}
+
+.fire::before { left: -40px; }
+.fire::after { right: -40px; }
+
+@keyframes flicker {
+  from { transform: translateY(0) scale(1); opacity: 0.5; }
+  to   { transform: translateY(-10px) scale(1.1); opacity: 1; }
+}
+
+.srh-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;          /* center the inner content */
+  align-items: center;
+  background: #031d44;              /* dark SRH color */
+  color: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem auto;                /* center horizontally */
+  width: 90%;                       /* almost full width, keep some space on sides */
+  max-width: 1000px;                /* optional: limit width on very large screens */
+  box-sizing: border-box;
+}
+
+
+.srh-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.srh-logo {
+  width: 200px;
+  margin-bottom: 0.5rem;
+}
+
+.trophy {
+  font-size: 1.2rem;
+  background: rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 0.2rem 0.6rem;
+  margin: 0.3rem 0;
+}
+
+.team-site-btn {
+  background: #f05a28;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  margin-top: 0.4rem;
+  font-weight: bold;
+}
+
+.srh-right {
+  display: grid;
+  gap: 0.3rem;
+  flex: 1;
+  align-items: center;
+  min-width: 200px;
+}
+
+.info-row {
+  background: rgba(255,255,255,0.1);
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.95rem;
+}
+
+.label {
+  color: #f4b400; /* golden/orange for label */
+  font-weight: bold;
+}
+
+
+section {
+  padding: 2rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #f05a28;
+}
+
+.about p {
+  line-height: 1.6;
+  text-align: center;
+}
+
+.players-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.player-card {
+  background: #ffe0b2;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 87, 34, 0.6);
+  border: 2px solid #ff5722;
+  animation: fire-glow 1.5s infinite alternate;
+  transition: transform 0.3s;
+}
+
+.player-card:hover {
+  transform: scale(1.05);
+}
+
+@keyframes fire-glow {
+  from {
+    box-shadow: 0 0 10px rgba(255, 87, 34, 0.4),
+                0 0 20px rgba(255, 87, 34, 0.3);
+    border-color: #ff7043;
+  }
+  to {
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.8),
+                0 0 30px rgba(255, 69, 0, 0.6);
+    border-color: #ff9800;
+  }
+}
+.players h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: #d84315;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.player-card {
+  background: #ffe0b2;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  border: 2px solid #ff5722;
+  box-shadow: 0 0 20px rgba(255, 87, 34, 0.6);
+  animation: fire-glow 1.5s infinite alternate;
+  transition: transform 0.3s;
+}
+
+.player-card:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.player-image img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
+.player-info {
+  padding: 0.5rem;
+}
+
+.player-info h4 {
+  margin: 0.5rem 0 0.2rem;
+  font-size: 1.1rem;
+  color: #f05a28;
+}
+
+.player-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* 🔥 Fire glow animation (keep this) */
+@keyframes fire-glow {
+  from {
+    box-shadow: 0 0 10px rgba(255, 87, 34, 0.4),
+                0 0 20px rgba(255, 87, 34, 0.3);
+    border-color: #ff7043;
+  }
+  to {
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.8),
+                0 0 30px rgba(255, 69, 0, 0.6);
+    border-color: #ff9800;
+  }
+}
+
+
+.carousel {
+  position: relative;
+  max-width: 600px;
+  margin: 2rem auto;
+  overflow: hidden;
+}
+
+.quotes {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.quote {
+  min-width: 100%;
+  box-sizing: border-box;
+  background: #ffe0b2;
+  border-left: 4px solid #f05a28;
+  padding: 1rem;
+  font-style: italic;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #f05a28;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
